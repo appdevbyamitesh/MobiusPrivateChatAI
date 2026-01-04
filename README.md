@@ -2,6 +2,8 @@
 
 A privacy-first iOS chat application that demonstrates on-device AI processing using SwiftUI and Core ML. This app showcases how to build LLM experiences that never send data to the cloud.
 
+> **📢 Conference Talk**: This project was developed for the international talk **"Privacy-First AI on iOS: Building On-Device LLM Experiences with Swift + Core ML"** presented at [MobiusConf 2025 Autumn](https://mobiusconf.com/en/archive/2025%20Autumn/talks/dffc071f3b9c451eacd378cb763da853/). The talk covers practical implementation of on-device LLMs, Core ML optimization, and privacy-first AI architecture.
+
 ## 🎯 What We Built
 
 **MobiusPrivateChatAI** is a complete on-device AI system built in 45 days, demonstrating that privacy and powerful AI are not mutually exclusive. This project proves that enterprise-grade Large Language Models can run entirely on mobile devices without compromising user privacy.
@@ -272,3 +274,5 @@ For questions about privacy-first AI implementation or Core ML integration, refe
 ---
 
 **Developed by** [appdevbyamitesh](https://github.com/appdevbyamitesh)
+
+**Presented at** [MobiusConf 2025 Autumn](https://mobiusconf.com/en/archive/2025%20Autumn/talks/dffc071f3b9c451eacd378cb763da853/) - *Privacy-First AI on iOS: Building On-Device LLM Experiences with Swift + Core ML*
