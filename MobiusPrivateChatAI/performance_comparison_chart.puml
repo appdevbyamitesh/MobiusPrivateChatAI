@@ -1,0 +1,92 @@
+@startuml
+!theme plain
+skinparam backgroundColor #F5F5F5
+skinparam defaultFontSize 12
+skinparam defaultFontName Arial
+
+title Performance Comparison: Neural Engine vs GPU vs CPU
+
+!define NEURAL_ENGINE_COLOR #4CAF50
+!define GPU_COLOR #2196F3
+!define CPU_COLOR #FF9800
+
+package "Performance Metrics" {
+    note as N1
+        <b>Tokens per Second</b>
+        Higher is better
+    end note
+}
+
+package "Neural Engine" {
+    rectangle "Neural Engine\n(Apple Silicon)" as NE {
+        rectangle "Specialized AI\nCo-processor" as NE_Core #NEURAL_ENGINE_COLOR
+        rectangle "15-25 tokens/sec" as NE_Perf #NEURAL_ENGINE_COLOR
+        rectangle "Lowest Power\nConsumption" as NE_Power #NEURAL_ENGINE_COLOR
+        rectangle "Optimized for\nML Operations" as NE_Opt #NEURAL_ENGINE_COLOR
+    }
+}
+
+package "GPU (Metal)" {
+    rectangle "GPU Processing" as GPU {
+        rectangle "Parallel\nComputation" as GPU_Core #GPU_COLOR
+        rectangle "8-15 tokens/sec" as GPU_Perf #GPU_COLOR
+        rectangle "Medium Power\nConsumption" as GPU_Power #GPU_COLOR
+        rectangle "General Purpose\nGraphics" as GPU_Opt #GPU_COLOR
+    }
+}
+
+package "CPU (Traditional)" {
+    rectangle "CPU Processing" as CPU {
+        rectangle "Sequential\nComputation" as CPU_Core #CPU_COLOR
+        rectangle "2-5 tokens/sec" as CPU_Perf #CPU_COLOR
+        rectangle "Highest Power\nConsumption" as CPU_Power #CPU_COLOR
+        rectangle "General Purpose\nProcessing" as CPU_Opt #CPU_COLOR
+    }
+}
+
+' Performance bars
+rectangle "Performance Comparison" as PerfChart {
+    rectangle "25" as Bar25 #NEURAL_ENGINE_COLOR
+    rectangle "15" as Bar15 #GPU_COLOR
+    rectangle "5" as Bar5 #CPU_COLOR
+}
+
+' Labels
+note right of Bar25 : Neural Engine\n(25 tokens/sec)
+note right of Bar15 : GPU\n(15 tokens/sec)
+note right of Bar5 : CPU\n(5 tokens/sec)
+
+' Power consumption indicators
+note bottom of NE : ⚡ Low Power
+note bottom of GPU : ⚡ Medium Power
+note bottom of CPU : ⚡ High Power
+
+' Use case scenarios
+note as UseCase1
+    <b>Neural Engine:</b>
+    • Real-time chat responses
+    • Battery-efficient processing
+    • Optimized for Core ML
+end note
+
+note as UseCase2
+    <b>GPU:</b>
+    • Complex model inference
+    • When Neural Engine unavailable
+    • Graphics-intensive tasks
+end note
+
+note as UseCase3
+    <b>CPU:</b>
+    • Fallback processing
+    • Simple text operations
+    • Legacy device support
+end note
+
+' Arrows showing priority
+NE --> GPU : Fallback
+GPU --> CPU : Fallback
+NE --> PerfChart : Best Performance
+
+@enduml
+

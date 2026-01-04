@@ -1,0 +1,13 @@
+@startuml
+!theme plain
+
+title Technology Roadmap
+
+[Core ML] --> [MLX Framework]
+[MLX Framework] --> [Quantum AI]
+
+note right of [MLX Framework] : 2025
+note right of [Quantum AI] : 2026
+@enduml
+
+

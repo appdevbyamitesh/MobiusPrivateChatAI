@@ -1,0 +1,56 @@
+@startuml
+!theme plain
+skinparam backgroundColor #F8F9FA
+skinparam defaultFontSize 14
+skinparam defaultFontName Arial
+
+title Performance Comparison: On-Device AI Processing
+
+!define NE_COLOR #4CAF50
+!define GPU_COLOR #2196F3
+!define CPU_COLOR #FF9800
+
+' Performance bars
+rectangle "Neural Engine" as NE #NE_COLOR {
+    rectangle "████████████████████████████████████████" as NE_Bar #NE_COLOR
+    note right : 25 tokens/sec\n⚡ Low Power
+}
+
+rectangle "GPU (Metal)" as GPU #GPU_COLOR {
+    rectangle "████████████████████████████" as GPU_Bar #GPU_COLOR
+    note right : 15 tokens/sec\n⚡ Medium Power
+}
+
+rectangle "CPU" as CPU #CPU_COLOR {
+    rectangle "██████████" as CPU_Bar #CPU_COLOR
+    note right : 5 tokens/sec\n⚡ High Power
+}
+
+' Key metrics
+note as Metrics
+    <b>Key Performance Metrics:</b>
+    • Speed: Tokens per second
+    • Efficiency: Power consumption
+    • Latency: Response time
+    • Battery: Impact on device
+end note
+
+' Use cases
+note as UseCases
+    <b>Optimal Use Cases:</b>
+    • Neural Engine: Real-time chat, Core ML
+    • GPU: Complex models, graphics
+    • CPU: Fallback, legacy support
+end note
+
+' Priority flow
+NE --> GPU : Fallback
+GPU --> CPU : Fallback
+
+' Performance indicators
+NE -[#NE_COLOR,thickness=3]-> NE_Bar : Best
+GPU -[#GPU_COLOR,thickness=2]-> GPU_Bar : Good
+CPU -[#CPU_COLOR,thickness=1]-> CPU_Bar : Basic
+
+@enduml
+
